@@ -79,19 +79,19 @@ var addHypocenters = () => {
 
         if (hypo.magnitude == null) {
             var c = L.circle([hypo.latitude, hypo.longitude], {radius: 500, color: depthColor})
-            .bindPopup('<span class="hyponame">'+hypo.name+'</span><br>M<span class="hypomagnitude">'+hypo.magnitude+'</span><br>深さ<span class="hypodepth">'+hypo.depth+'</span>km<br>['+hypo.latitude+','+hypo.longitude+']');
+            .bindPopup('<span class="hyponame">'+hypo.name+'</span><br>M<span class="hypomagnitude">'+hypo.magnitude+'</span><br>深さ<span class="hypodepth">'+hypo.depth+'</span>km<br>'+new Date(hypo.time).toLocaleString());
             circlesGroup.addLayer(c);
         } else {
             var floatM = parseFloat(hypo.magnitude);
             if (floatM <= 0) {
                 var c = L.circle([hypo.latitude, hypo.longitude], {radius: 500, color: depthColor})
-                .bindPopup('<span class="hyponame">'+hypo.name+'</span><br>M<span class="hypomagnitude">'+hypo.magnitude+'</span><br>深さ<span class="hypodepth">'+hypo.depth+'</span>km<br>['+hypo.latitude+','+hypo.longitude+']');
+                .bindPopup('<span class="hyponame">'+hypo.name+'</span><br>M<span class="hypomagnitude">'+hypo.magnitude+'</span><br>深さ<span class="hypodepth">'+hypo.depth+'</span>km<br>'+new Date(hypo.time).toLocaleString());
                 circlesGroup.addLayer(c);
             } else {
                 console.log(floatM);
                 console.log(parseInt(floatM * 5000));
                 var c = L.circle([hypo.latitude, hypo.longitude], {radius: parseInt(floatM * 5000), color: depthColor})
-                .bindPopup('<span class="hyponame">'+hypo.name+'</span><br>M<span class="hypomagnitude">'+hypo.magnitude+'</span><br>深さ<span class="hypodepth">'+hypo.depth+'</span>km<br>['+hypo.latitude+','+hypo.longitude+']');
+                .bindPopup('<span class="hyponame">'+hypo.name+'</span><br>M<span class="hypomagnitude">'+hypo.magnitude+'</span><br>深さ<span class="hypodepth">'+hypo.depth+'</span>km<br>'+new Date(hypo.time).toLocaleString());
                 circlesGroup.addLayer(c);
             }
         }
