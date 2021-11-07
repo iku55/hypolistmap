@@ -90,7 +90,7 @@ var addHypocenters = () => {
             } else {
                 console.log(floatM);
                 console.log(parseInt(floatM * 5000));
-                var c = L.circle([hypo.latitude, hypo.longitude], {radius: parseInt(floatM * 1000), color: depthColor})
+                var c = L.circle([hypo.latitude, hypo.longitude], {radius: parseInt(floatM * 2500), color: depthColor})
                 .bindPopup('<span class="hyponame">'+hypo.name+'</span><br>M<span class="hypomagnitude">'+hypo.magnitude+'</span><br>深さ<span class="hypodepth">'+hypo.depth+'</span>km<br>['+hypo.latitude+','+hypo.longitude+']');
                 circlesGroup.addLayer(c);
             }
