@@ -18,7 +18,8 @@ map.attributionControl.addAttribution('<a href="https://www.data.jma.go.jp/devel
 map.attributionControl.addAttribution('データ: <a href="https://www.data.jma.go.jp/svd/eqev/data/daily_map/index.html">気象庁 震源リスト</a>を<a href="https://github.com/iku55/hypolistjson">JSONに変換したもの</a>')
 
 var targetDate = [new Date()];
-targetDate[0].setHours(targetDate[0].getHours() - 44.5);
+targetDate[0].setHours(targetDate[0].getHours() - 44);
+targetDate[0].setMinutes(targetDate[0].getMinutes() - 30);
 targetDate[1] = (('0000'+targetDate[0].getFullYear()).slice(-4))+'/'+(('00'+(targetDate[0].getMonth()+1)).slice(-2))+'/'+(('00'+targetDate[0].getDate()).slice(-2));
 targetDate[2] = (('0000'+targetDate[0].getFullYear()).slice(-4))+(('00'+(targetDate[0].getMonth()+1)).slice(-2))+(('00'+targetDate[0].getDate()).slice(-2));
 document.getElementById('date').innerText = targetDate[1];
