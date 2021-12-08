@@ -11,10 +11,17 @@ tileLayer.addTo(map);
 
 $.getJSON('eq_subdivision_area.geojson', (data) => {
     L.geoJson(data, {
-        color: '#aaa'
+        color: '#888'
     }).addTo(map);
 });
 map.attributionControl.addAttribution('<a href="https://www.data.jma.go.jp/developer/gis.html">気象庁</a>')
+$.getJSON('platedata.geojson', (data) => {
+    L.geoJson(data, {
+        color: '#aaa'
+    }).addTo(map);
+});
+map.attributionControl.addAttribution('<a href="https://www.usgs.gov/media/files/plate-boundaries-kmz-file">USGS</a>')
+
 map.attributionControl.addAttribution('データ: <a href="https://www.data.jma.go.jp/svd/eqev/data/daily_map/index.html">気象庁 震源リスト</a>を<a href="https://github.com/iku55/hypolistjson">JSONに変換したもの</a>')
 
 var targetDate = [new Date()];
