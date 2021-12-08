@@ -73,8 +73,8 @@ var addHypocenters = () => {
         var floatDepth = parseFloat(hypo.depth);
         var depthColor;
         if (floatDepth >= 300) depthColor = '#00d';
-        else if (floatDepth >= 100) depthColor = '#da0';
-        else if (floatDepth >= 30) depthColor = '#dd4';
+        else if (floatDepth >= 100) depthColor = '#dd4';
+        else if (floatDepth >= 30) depthColor = '#da0';
         else if (floatDepth >= 0) depthColor = '#d00';
         else depthColor = '#ddd';
 
